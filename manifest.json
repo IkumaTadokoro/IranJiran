@@ -2,5 +2,11 @@
   "name": "IranJiran",
   "description": "Remove unnecessary(='いらん') parts from JIRA board.",
   "manifest_version": 3,
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": ["https://*.atlassian.net/jira/software/projects/*"],
+      "js": ["src/content.ts"]
+    }
+  ]
 }
