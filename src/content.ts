@@ -1,3 +1,6 @@
+import { blockBreadCrumbs, blockTitle } from "./jira";
+
 window.setInterval(() => {
-  console.log("JIRAのページだよ！");
+  blockBreadCrumbs();
+  blockTitle();
 }, 1000);
