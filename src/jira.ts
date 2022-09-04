@@ -1,10 +1,16 @@
-export const blockBreadCrumbs = () => {
-  document
+export const switchBreadCrumbs = (isShowBreadCrumbs: boolean) => {
+  const breadCrumbs = document
     .querySelector('nav[aria-label="Breadcrumbs"]')!
-    .closest("div")!.style.display = "none";
+    .closest("div");
+
+  if (isShowBreadCrumbs) {
+    breadCrumbs!.removeAttribute("style");
+  } else {
+    breadCrumbs!.style.display = "none";
+  }
 };
 
-export const blockTitle = () => {
+export const switchPageTitle = (isShowPageTitle: boolean) => {
   const h1 = document.querySelector("h1");
   if (h1) {
     const boardHeader = h1.closest(
@@ -19,7 +25,11 @@ export const blockTitle = () => {
       return;
     }
 
-    header.style.display = "none";
+    if (isShowPageTitle) {
+      header.removeAttribute("style");
+    } else {
+      header.style.display = "none";
+    }
   } else {
     return;
   }

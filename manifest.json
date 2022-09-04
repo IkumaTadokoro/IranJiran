@@ -11,5 +11,8 @@
       "matches": ["https://*.atlassian.net/jira/software/projects/*"],
       "js": ["src/content.ts"]
     }
+  ],
+  "permissions": [
+    "storage"
   ]
 }
